@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 2em;
+    font-size: 1em;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "header header"
+    "sidebar main";
+}
+
+header{
+    grid-area: "header header";
+    grid-column: span 2;
+    background-color: darkslategray;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* create a space in between the elements */
+    align-items: center;
+}
+.text{
+    text-align: right; /* align the text to the right side of the container */
+}
+
+.text h2{
+    font-size: 2em;
+}
+
+img{
+    justify-items:start; /* align items at the beginning of the block */
+    border-radius: 50%;
+    border: 5px solid darkolivegreen;
+}
+
+.sidebar{
+    grid-area: "sidebar";
+    background-color: dimgray;
+    color: white;
+    padding: 20px;
+}
+
+section h2{
+    border-bottom: 2px solid white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+ul>li{
+    list-style-type: none;
+    
+}
+
+.skills-list{
+    display: inline-block; /* to wrap the text so that it does not break*/
+    padding: 5px;
+    background-color: darkslategray;
+    margin: 5px; /* space between each circle */
+    border-radius: 20px;
+}
+
+.main{
+    grid-area: "main";
+    background-color: #fff;
+    padding: 30px;
+}
+
+h3{
+    border-bottom: 2px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: darkolivegreen;
+}
+
+.job-title{
+    font-weight: bold ;
+}
+
+.job-date{
+    font-style: italic;
+    color: #666;
+}
+
+.lists li{
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .container{
+        grid-template-columns: 1fr ;
+        
+    
+        grid-template-areas: 
+        "header"
+        "sidebar"
+        "main";
+    }
+
+     header{
+        grid-column: 1;
+         flex-direction: column;
+    } 
+
+    .text h2,p{
+   flex-direction: column;
+    }
+    
+}
